@@ -1,0 +1,22 @@
+# DB 설정
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver # database connection
+
+  # JPA 설정
+  jpa:
+    hibernate:
+      ddl-auto: create # 자동으로 탭을 만들어준다.(애플리케이션 실행 시점)
+    properties:
+      hibernate:
+      format_sql: true
+      #    show_sql: true # sysout에 출력(하이버네이트가 생성하는 SQL이 다 보인다.)
+
+# log Level
+logging:
+  level:
+    org.hibernate.SQL: debug # logger를 통해 출력(하이버네이트가 생성하는 SQL이 다 보인다.) 이 방법을 선호한다.
+    org.hibernate.type: trace
